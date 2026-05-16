@@ -8,7 +8,8 @@ interface Props {
 
 export default function WeatherCard({ weather, location }: Props) {
   const { current } = weather
-  const info = getWeatherInfo(current.weather_code)
+  const isDay = current.is_day === 1
+  const info = getWeatherInfo(current.weather_code, isDay)
   const windDir = getWindDirection(current.wind_direction_10m)
   const maxTemp = weather.daily.temperature_2m_max[0]
   const minTemp = weather.daily.temperature_2m_min[0]
