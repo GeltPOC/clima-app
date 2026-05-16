@@ -3,6 +3,7 @@ import { useState } from 'react'
 import SearchBar from './SearchBar'
 import WeatherCard from './WeatherCard'
 import ForecastRow from './ForecastRow'
+import DarkModeToggle from './DarkModeToggle'
 import { GeoResult, WeatherData } from '../types/weather.types'
 
 const BASE = '/clima-app'
@@ -32,9 +33,11 @@ export default function WeatherApp() {
 
   const isDay = weather ? weather.current.is_day === 1 : true
   const bg = weather ? getGradient(weather.current.weather_code, isDay) : 'from-slate-800 via-slate-700 to-slate-600'
+  // En dark mode forzamos overlay oscuro adicional via clase en main, gestionado por DarkModeToggle en html
 
   return (
-    <main className={`min-h-screen bg-gradient-to-br ${bg} transition-all duration-1000 flex flex-col items-center px-4 py-10`}>
+    <main className={`relative min-h-screen bg-gradient-to-br ${bg} dark:brightness-75 transition-all duration-1000 flex flex-col items-center px-4 py-10`}>
+      <DarkModeToggle />
       <div className="w-full max-w-2xl flex flex-col gap-6">
         <header className="text-center">
           <h1 className="text-4xl font-bold text-white drop-shadow-lg tracking-wide">🌍 Clima App</h1>

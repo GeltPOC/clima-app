@@ -7,3 +7,9 @@
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
   }
 }
+
+/* Dark mode base */
+html.dark {
+  color-scheme: dark;
+}
+

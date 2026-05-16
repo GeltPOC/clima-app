@@ -15,7 +15,7 @@ export default function WeatherCard({ weather, location }: Props) {
   const minTemp = weather.daily.temperature_2m_min[0]
 
   return (
-    <div className="bg-white/15 backdrop-blur-md border border-white/25 rounded-3xl p-6 shadow-2xl text-white">
+    <div className="bg-white/15 dark:bg-black/30 backdrop-blur-md border border-white/25 dark:border-white/10 rounded-3xl p-6 shadow-2xl text-white">
       {/* Location */}
       <div className="mb-4">
         <h2 className="text-2xl font-bold">{location.name}</h2>
@@ -54,7 +54,7 @@ export default function WeatherCard({ weather, location }: Props) {
 
 function StatCard({ icon, label, value }: { icon: string; label: string; value: string }) {
   return (
-    <div className="bg-white/10 rounded-2xl px-4 py-3 flex items-center gap-3">
+    <div className="bg-white/10 dark:bg-black/20 rounded-2xl px-4 py-3 flex items-center gap-3">
       <span className="text-2xl">{icon}</span>
       <div>
         <p className="text-white/50 text-xs">{label}</p>

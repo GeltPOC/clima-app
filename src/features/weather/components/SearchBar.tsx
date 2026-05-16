@@ -54,7 +54,7 @@ export default function SearchBar({ onSelect, base }: Props) {
 
   return (
     <div ref={wrapRef} className="relative w-full">
-      <div className="flex items-center bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl px-4 py-3 gap-3 shadow-lg focus-within:border-white/60 transition-all">
+      <div className="flex items-center bg-white/20 dark:bg-black/30 backdrop-blur-md border border-white/30 dark:border-white/10 rounded-2xl px-4 py-3 gap-3 shadow-lg focus-within:border-white/60 dark:focus-within:border-white/30 transition-all">
         {loading
           ? <div className="w-5 h-5 border-2 border-white/50 border-t-white rounded-full animate-spin flex-shrink-0" />
           : <span className="text-white/70 text-xl flex-shrink-0">🔍</span>
@@ -75,7 +75,7 @@ export default function SearchBar({ onSelect, base }: Props) {
       </div>
 
       {open && (
-        <ul className="absolute top-full left-0 right-0 mt-2 bg-slate-800/95 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden shadow-2xl z-50">
+        <ul className="absolute top-full left-0 right-0 mt-2 bg-slate-800/95 dark:bg-slate-950/98 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-2xl overflow-hidden shadow-2xl z-50">
           {results.map((r, i) => (
             <li key={`${r.id ?? i}`}>
               <button
