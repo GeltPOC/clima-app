@@ -16,7 +16,7 @@ export interface WeatherCurrent {
   weather_code: number
   wind_speed_10m: number
   wind_direction_10m: number
-  /** 1 = día, 0 = noche (proporcionado por Open-Meteo) */
+  /** 1 = día, 0 = noche — proporcionado por Open-Meteo */
   is_day: 0 | 1
 }
 

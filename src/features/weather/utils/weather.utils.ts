@@ -4,17 +4,22 @@ export interface WeatherInfo {
   category: 'clear' | 'cloudy' | 'foggy' | 'drizzle' | 'rain' | 'snow' | 'storm'
 }
 
+/**
+ * Devuelve icono y metadatos para un código WMO.
+ * @param code  Código WMO del clima
+ * @param isDay true = día (default), false = noche
+ */
 export function getWeatherInfo(code: number, isDay = true): WeatherInfo {
   // WMO Weather interpretation codes
   if (code === 0) return isDay
-    ? { icon: '☀️', label: 'Cielo despejado', category: 'clear' }
-    : { icon: '🌙', label: 'Cielo despejado', category: 'clear' }
+    ? { icon: '☀️',  label: 'Cielo despejado',       category: 'clear' }
+    : { icon: '🌙',  label: 'Cielo despejado',        category: 'clear' }
   if (code === 1) return isDay
-    ? { icon: '🌤️', label: 'Mayormente despejado', category: 'clear' }
-    : { icon: '🌙', label: 'Mayormente despejado', category: 'clear' }
+    ? { icon: '🌤️', label: 'Mayormente despejado',   category: 'clear' }
+    : { icon: '🌙',  label: 'Mayormente despejado',   category: 'clear' }
   if (code === 2) return isDay
-    ? { icon: '⛅', label: 'Parcialmente nublado', category: 'cloudy' }
-    : { icon: '☁️', label: 'Parcialmente nublado', category: 'cloudy' }
+    ? { icon: '⛅',  label: 'Parcialmente nublado',   category: 'cloudy' }
+    : { icon: '☁️',  label: 'Parcialmente nublado',   category: 'cloudy' }
   if (code === 3) return { icon: '☁️', label: 'Nublado', category: 'cloudy' }
   if (code === 45) return { icon: '🌫️', label: 'Niebla', category: 'foggy' }
   if (code === 48) return { icon: '🌫️', label: 'Niebla helada', category: 'foggy' }

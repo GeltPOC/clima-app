@@ -77,18 +77,18 @@ export default function WeatherApp() {
 }
 
 function getGradient(code: number, isDay = true): string {
+  // Noche: siempre fondo oscuro azul/índigo independientemente del clima
   if (!isDay) {
-    // Gradientes nocturnos según condición
-    if (code <= 1)  return 'from-indigo-950 via-slate-900 to-blue-950'   // despejado noche → cielo estrellado
-    if (code <= 3)  return 'from-slate-900 via-slate-800 to-gray-900'    // nublado noche
-    if (code <= 49) return 'from-slate-900 via-gray-900 to-zinc-900'     // niebla noche
-    if (code <= 67) return 'from-blue-950 via-slate-900 to-slate-800'    // lluvia noche
-    if (code <= 77) return 'from-slate-800 via-blue-950 to-indigo-950'   // nieve noche
-    if (code <= 82) return 'from-blue-950 via-slate-900 to-gray-900'     // chubascos noche
-    if (code <= 99) return 'from-gray-950 via-slate-900 to-zinc-950'     // tormenta noche
-    return 'from-indigo-950 via-slate-900 to-blue-950'
+    if (code <= 2)  return 'from-indigo-950 via-blue-950 to-slate-900'
+    if (code <= 3)  return 'from-slate-900 via-indigo-950 to-slate-900'
+    if (code <= 49) return 'from-slate-900 via-slate-800 to-gray-900'
+    if (code <= 67) return 'from-blue-950 via-slate-900 to-slate-950'
+    if (code <= 77) return 'from-slate-800 via-blue-950 to-slate-900'
+    if (code <= 82) return 'from-blue-950 via-slate-900 to-slate-950'
+    if (code <= 99) return 'from-slate-900 via-gray-900 to-slate-950'
+    return 'from-slate-900 via-slate-800 to-slate-900'
   }
-  // Gradientes diurnos (originales)
+  // Día
   if (code === 0) return 'from-sky-400 via-blue-500 to-indigo-600'
   if (code <= 2) return 'from-sky-500 via-slate-500 to-slate-600'
   if (code <= 3) return 'from-slate-500 via-slate-600 to-slate-700'
