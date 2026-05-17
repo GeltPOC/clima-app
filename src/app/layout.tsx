@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Clima App',
-  description: 'Consulta el clima actual de cualquier ciudad del mundo',
+  title: '🌤️ Clima App – El tiempo en tiempo real',
+  description: 'Consulta el clima actual y la previsión de cualquier ciudad del mundo',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

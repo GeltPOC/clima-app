@@ -40,8 +40,12 @@ export default function WeatherApp() {
       <DarkModeToggle />
       <div className="w-full max-w-2xl flex flex-col gap-6">
         <header className="text-center">
-          <h1 className="text-4xl font-bold text-white drop-shadow-lg tracking-wide">🌍 Clima App</h1>
-          <p className="text-white/70 mt-1 text-sm">Busca cualquier ciudad del mundo</p>
+          <h1 className="text-5xl font-extrabold text-white drop-shadow-xl tracking-wide mb-1">
+            🌤️ Clima App
+          </h1>
+          <p className="text-white/70 mt-2 text-base font-medium">
+            Consulta el clima en tiempo real de cualquier ciudad del mundo
+          </p>
         </header>
 
         <SearchBar onSelect={handleSelect} base={BASE} />
